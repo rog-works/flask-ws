@@ -1,0 +1,12 @@
+version: '3'
+services:
+  app:
+    container_name: flask-app
+    image: flask-app:latest
+    build: docker/app
+    volumes:
+      - ./:/opt
+    ports:
+      - 18080:80
+    command: 'python app.py'
+    
